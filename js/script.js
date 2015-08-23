@@ -6,6 +6,7 @@ $(document).ready(function(){
 	$('#canciones a.botones').on('click', function(){
 		$('#reproductor').attr('src', $(this).attr('alt'));
 		$('#marquesina').html($(this).attr('rel'));
+		pause();
 		play();
 	})
 	

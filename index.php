@@ -16,6 +16,9 @@
 			$listaradios['MaximaFM']['url'] = "http://5243.live.streamtheworld.com:80/MAXIMAFM_SC";
 			$listaradios['MaximaFM']['img'] = "iconos/maxima.png";
 			
+			$listaradios['Cadena100']['url'] = "http://195.10.10.201/cope/cadena100.mp3";
+			$listaradios['Cadena100']['img'] = "iconos/cad100.png"; 
+			
 			$listaradios['House']['url'] = "http://5.39.66.128:8005/live";
 			$listaradios['House']['img'] = "iconos/house.png";
 			$listaradios['Live']['url'] = "http://audio-online.net:2300/live";
