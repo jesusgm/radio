@@ -9,16 +9,16 @@
 	</head>
 	<body>
 		<?php
-			$listaradios = array();	
-			$listaradios['Rock FM']['url'] = 'http://195.55.74.217/cope/rockfm.mp3';
+			$listaradios = array();
+			$listaradios['Rock FM']['url'] = 'http://195.55.74.212/cope/rockfm-low.mp3';
 			$listaradios['Rock FM']['img'] = 'iconos/rockfm.png';
-					
+
 			$listaradios['MaximaFM']['url'] = "http://5243.live.streamtheworld.com:80/MAXIMAFM_SC";
 			$listaradios['MaximaFM']['img'] = "iconos/maxima.png";
-			
+
 			$listaradios['Cadena100']['url'] = "http://195.10.10.201/cope/cadena100.mp3";
-			$listaradios['Cadena100']['img'] = "iconos/cad100.png"; 
-			
+			$listaradios['Cadena100']['img'] = "iconos/cad100.png";
+
 			$listaradios['House']['url'] = "http://5.39.66.128:8005/live";
 			$listaradios['House']['img'] = "iconos/house.png";
 			$listaradios['Live']['url'] = "http://audio-online.net:2300/live";
@@ -42,24 +42,24 @@
 		<br />
 		<br />
 		<marquee id="marquesina"></marquee>
-		<br />		
+		<br />
 		<form id="canciones">
 			<?php /*
 			 <select name="url" id="url" onchange="setCancion()" multiple="multiple">
 				<option value="" >--Selecciona opcion--</option>
-				<?php 
+				<?php
 					foreach ($listaradios as $nombre => $url) {
 						echo "<option value='" . $url . "'>" . $nombre . " </option>";
 					}
 				?>
-			</select> 
-			 */ 
+			</select>
+			 */
 					foreach ($listaradios as $nombre => $url) {
 						/*echo "<pre>";
 						print_r($url);
 						echo "</pre>";*/
 						//echo "<label for='".$nombre."'>".$nombre."</label>";
-						
+
 						//echo "<input onclick=\"setCancion('" . $url['url'] . "'); setActive(this)\" class='url' name='url' type='button' value='" . $nombre . "'/>";
 						echo "<a class='botones' href='javascript:void(0)' alt='" . $url['url'] . "' rel='".$nombre."'>";
 						echo "<img src='".$url['img']."' class='url' />";
@@ -94,28 +94,28 @@
 				}
 				$info = getRemoteFile($url);
 				?>
-				 
+
 				<?php
 				// Extraemos el Pais
 				preg_match("/Country: (.*)\n/", $info, $out);
 				echo 'Pais: '.$out[1];
 				?>
-				 
+
 				<br>
-				 
+
 				<?php
 				// Extraemos la Ciudad
 				preg_match("/City: (.*)\n/", $info, $out);
 				//echo 'Ciudad: '.$out[1];
 				?>
-				 
+
 				<br>
-				 
+
 				<?php
 				// Extraemos la IP externa
 				preg_match("/IP: (.*)\n/", $info, $out);
 				echo 'Ip: '.$out[1];
-			 * 
+			 *
 			 */
 			?>
 	</body>
