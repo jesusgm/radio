@@ -1,122 +1,118 @@
-<!DOCTYPE >
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Musik</title>
-		<link href="style.css" rel='stylesheet' />
-		<link href="./font-awesome/css/font-awesome.css" rel='stylesheet'/>
-		<script src="./js/jquery-2.1.4.min.js" type="text/javascript" ></script>
-		<script src="./js/script.js" type="text/javascript" ></script>
-	</head>
-	<body>
-		<?php
-			$listaradios = array();
-			$listaradios['Rock FM']['url'] = 'http://195.55.74.212/cope/rockfm-low.mp3';
-			$listaradios['Rock FM']['img'] = 'iconos/rockfm.png';
+<head>
+  <meta charset="utf-8" />
+  <title>Radio list</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link href="dist/skin/blue.monday/css/jplayer.blue.monday.min.css" rel="stylesheet" type="text/css" />
+  <link href="dist/skin/blue.monday/css/custom.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="lib/jquery.min.js"></script>
+  <script type="text/javascript" src="dist/jplayer/jquery.jplayer.min.js"></script>
+  <script type="text/javascript" src="dist/add-on/jplayer.playlist.min.js"></script>
+  <script type="text/javascript">
+  //<![CDATA[
+  $(document).ready(function(){
+  		new jPlayerPlaylist({
+  		jPlayer: "#jquery_jplayer",
+  		cssSelectorAncestor: "#jp_container"
+  	}, [
+      {
+  			title:"Loca FM - House",
+  			mp3:"http://5.39.66.128:8005/live"
+  		},
+  		{
+  			title:"Rock FM",
+  			mp3:"http://195.55.74.212/cope/rockfm-low.mp3"
+  		},
+  		{
+  			title:"Máxima FM",
+  			mp3:"http://5243.live.streamtheworld.com:80/MAXIMAFM_SC"
+  		},
+  		{
+  			title:"Loca FM - Live",
+  			mp3:"http://audio-online.net:2300/live"
+  		},
+  		{
+  			title:"Loca FM - Dance",
+  			mp3:"http://5.39.66.128:8004/live"
+  		},
+  		{
+  			title:"Loca FM - Dance",
+  			mp3:"http://5.39.66.128:8009/live"
+  		},
+  		{
+  			title:"Loca FM - Remember",
+  			mp3:"http://5.39.66.128:8006/live"
+  		},
+  		{
+  			title:"Loca FM - Proghouse",
+  			mp3:"http://5.39.66.128:8011/live"
+  		},
+  		{
+  			title:"Loca FM - Sessions",
+  			mp3:"http://5.39.66.128:8013/live"
+  		},
+  		{
+  			title:"Loca FM - Ambient",
+  			mp3:"http://5.39.66.128:8007/live"
+  		}
+  	], {
+  		swfPath: "dist/jplayer",
+  		supplied: "mp3",
+  		wmode: "window",
+  		useStateClassSkin: true,
+  		autoBlur: false,
+  		smoothPlayBar: true,
+  		keyEnabled: true
+  	});
+  });
+  //]]>
+  </script>
+</head>
+<body>
 
-			$listaradios['MaximaFM']['url'] = "http://5243.live.streamtheworld.com:80/MAXIMAFM_SC";
-			$listaradios['MaximaFM']['img'] = "iconos/maxima.png";
+<div id="jquery_jplayer" class="jp-jplayer"></div>
+<div id="jp_container" class="jp-audio" role="application" aria-label="media player">
+	<div class="jp-type-playlist">
+		<div class="jp-gui jp-interface">
+			<div class="jp-controls">
+				<button class="jp-previous" role="button" tabindex="0">previous</button>
+				<button class="jp-play" role="button" tabindex="0">play</button>
+				<button class="jp-next" role="button" tabindex="0">next</button>
+				<button class="jp-stop" role="button" tabindex="0">stop</button>
+			</div>
+			<div class="jp-progress">
+				<div class="jp-seek-bar">
+					<div class="jp-play-bar"></div>
+				</div>
+			</div>
+			<div class="jp-volume-controls">
+				<button class="jp-mute" role="button" tabindex="0">mute</button>
+				<button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+				<div class="jp-volume-bar">
+					<div class="jp-volume-bar-value"></div>
+				</div>
+			</div>
+			<div class="jp-time-holder">
+				<div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+				<div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+			</div>
+			<div class="jp-toggles">
+				<button class="jp-repeat" role="button" tabindex="0">repeat</button>
+				<button class="jp-shuffle" role="button" tabindex="0">shuffle</button>
+			</div>
+		</div>
+		<div class="jp-playlist">
+			<ul>
+				<li>&nbsp;</li>
+			</ul>
+		</div>
+		<div class="jp-no-solution">
+			<span>Update Required</span>
+			To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+		</div>
+	</div>
+</div>
+</body>
 
-			$listaradios['Cadena100']['url'] = "http://195.10.10.201/cope/cadena100.mp3";
-			$listaradios['Cadena100']['img'] = "iconos/cad100.png";
-
-			$listaradios['House']['url'] = "http://5.39.66.128:8005/live";
-			$listaradios['House']['img'] = "iconos/house.png";
-			$listaradios['Live']['url'] = "http://audio-online.net:2300/live";
-			$listaradios['Live']['img'] = "iconos/live.png";
-			$listaradios['Dance']['url'] = "http://5.39.66.128:8004/live";
-			$listaradios['Dance']['img'] = "iconos/dance.png";
-			$listaradios['Techno']['url'] = "http://5.39.66.128:8009/live";
-			$listaradios['Techno']['img'] = "iconos/techno.png";
-			$listaradios['Remember']['url'] = "http://5.39.66.128:8006/live";
-			$listaradios['Remember']['img'] = "iconos/remember.png";
-			$listaradios['Proghouse']['url'] = "http://5.39.66.128:8011/live";
-			$listaradios['Proghouse']['img'] = "iconos/proghouse.png";
-			$listaradios['Sessions']['url'] = "http://5.39.66.128:8013/live";
-			$listaradios['Sessions']['img'] = "iconos/sessions.png";
-			$listaradios['Ambient']['url'] = "http://5.39.66.128:8007/live";
-			$listaradios['Ambient']['img'] = "iconos/ambient.png";
-		?>
-		<audio id="reproductor" controls="false" autoplay="autoplay" preload="auto">
-			<p>Reproductor no soportado</p>
-		</audio>
-		<br />
-		<br />
-		<marquee id="marquesina"></marquee>
-		<br />
-		<form id="canciones">
-			<?php /*
-			 <select name="url" id="url" onchange="setCancion()" multiple="multiple">
-				<option value="" >--Selecciona opcion--</option>
-				<?php
-					foreach ($listaradios as $nombre => $url) {
-						echo "<option value='" . $url . "'>" . $nombre . " </option>";
-					}
-				?>
-			</select>
-			 */
-					foreach ($listaradios as $nombre => $url) {
-						/*echo "<pre>";
-						print_r($url);
-						echo "</pre>";*/
-						//echo "<label for='".$nombre."'>".$nombre."</label>";
-
-						//echo "<input onclick=\"setCancion('" . $url['url'] . "'); setActive(this)\" class='url' name='url' type='button' value='" . $nombre . "'/>";
-						echo "<a class='botones' href='javascript:void(0)' alt='" . $url['url'] . "' rel='".$nombre."'>";
-						echo "<img src='".$url['img']."' class='url' />";
-						echo "</a>";
-					}
-			?>
-			<br /><br /><br />
-			<a id="enlaceplay" href="javascript:void(0)">
-				<i class="fa fa-youtube-play"></i>
-			</a>
-			<!--<input type="button" onclick="pause();setActive(null)" value="Pause || "/>-->
-			<a id="enlacepause" href="javascript:void(0)" style="display:none;">
-				<i class="fa fa-pause"></i>
-			</a>
-		</form>
-		<?php
-			/*
-				// Con esta línea obtenemos nuestra IP externa
-				$extip = getenv("REMOTE_ADDR");
-				// tambien podriamos usar esta para obtenera la ip externa
-				// $extip = $_SERVER['REMOTE_ADDR'];
-				$url = 'http://api.hostip.info/get_html.php?ip='.$extip;
-				// Usamos Curl para obtener los resultados de la peticion a Hostip.info
-				function getRemoteFile($url, $timeout = 10) {
-				  $ch = curl_init();
-				  curl_setopt ($ch, CURLOPT_URL, $url);
-				  curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
-				  curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-				  $file_contents = curl_exec($ch);
-				  curl_close($ch);
-				  return ($file_contents) ? $file_contents : FALSE;
-				}
-				$info = getRemoteFile($url);
-				?>
-
-				<?php
-				// Extraemos el Pais
-				preg_match("/Country: (.*)\n/", $info, $out);
-				echo 'Pais: '.$out[1];
-				?>
-
-				<br>
-
-				<?php
-				// Extraemos la Ciudad
-				preg_match("/City: (.*)\n/", $info, $out);
-				//echo 'Ciudad: '.$out[1];
-				?>
-
-				<br>
-
-				<?php
-				// Extraemos la IP externa
-				preg_match("/IP: (.*)\n/", $info, $out);
-				echo 'Ip: '.$out[1];
-			 *
-			 */
-			?>
-	</body>
 </html>
