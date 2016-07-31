@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <title>Radio list</title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta name="viewport" content="width=device-width">
   <link href="dist/skin/blue.monday/css/jplayer.blue.monday.min.css" rel="stylesheet" type="text/css" />
   <link href="dist/skin/blue.monday/css/custom.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="lib/jquery.min.js"></script>
